@@ -1,0 +1,440 @@
+/* =====================================================
+   style.css - The KD Artisan Online Store
+
+   HOW CSS WORKS (read this first):
+   Every rule looks like this:
+
+       selector {
+         property: value;
+       }
+
+   - The selector says WHAT to style.
+       h2        = every <h2> on the page
+       .card     = everything with class="card"   (a dot means "class")
+       #home     = the one thing with id="home"   (a # means "id")
+   - Each property: value; line changes one thing, e.g.  color: red;
+   ===================================================== */
+
+
+/* ---------- 1. BASICS (apply to the whole page) ---------- */
+
+/* * means "everything". border-box makes padding stay INSIDE an element's width,
+   which stops boxes from becoming wider than you expect. */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling when you click the # links in the navigation bar */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;                       /* removes the white gap around the page */
+  font-family: Arial, sans-serif;  /* the text style */
+  background: #faf6f0;             /* page background colour (a light cream) */
+  color: #333333;                  /* text colour (dark grey) */
+  line-height: 1.6;                /* space between lines of text */
+}
+
+/* Makes sure pictures never stick out past the edge of the screen */
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #7a4e2d;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+h2 {
+  text-align: center;
+  color: #7a4e2d;
+}
+
+
+/* ---------- 2. HEADER ---------- */
+
+.site-header {
+  background: #7a4e2d;   /* brown */
+  color: white;
+  text-align: center;
+  padding: 30px 20px;    /* space INSIDE the box: 30px top/bottom, 20px left/right */
+}
+
+.site-header h1 {
+  margin: 0;             /* removes the default gap around the title */
+}
+
+
+/* ---------- 3. NAVIGATION BAR ---------- */
+
+.main-nav {
+  background: #2b2320;   /* very dark brown */
+  text-align: center;
+  padding: 10px;
+}
+
+.main-nav ul {
+  list-style: none;      /* removes the bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+/* inline-block puts the list items side by side instead of one under the other */
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav a {
+  display: block;
+  color: white;
+  text-decoration: none; /* removes the underline */
+  padding: 8px 12px;
+}
+
+/* :hover = when the mouse is over it */
+.main-nav a:hover {
+  background: #c8893b;   /* gold */
+  color: #2b2320;
+}
+
+
+/* ---------- 4. SECTIONS ---------- */
+
+/* Every <section> inside <main>: not too wide, centred on the page */
+main section {
+  max-width: 1000px;
+  margin: 0 auto;        /* "auto" on the left and right centres the box */
+  padding: 40px 20px;
+}
+
+/* The video section is narrower so the video isn't huge */
+#home {
+  max-width: 800px;
+}
+
+.section-intro {
+  text-align: center;
+}
+
+
+/* ---------- 5. VIDEO ---------- */
+
+/* This makes the video keep a 16:9 shape on every screen size.
+   56.25% is 9 divided by 16. The iframe is stretched to fill the box. */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-note {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+/* ---------- 6. BUTTONS ---------- */
+
+/* Styles both <a class="btn"> links and <button> buttons the same way.
+   The comma means "style all of these". */
+.btn,
+button {
+  display: inline-block;
+  background: #7a4e2d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;      /* rounded corners */
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;         /* shows the hand pointer on hover */
+}
+
+.btn:hover,
+button:hover {
+  background: #5c3a20;     /* darker brown on hover */
+}
+
+
+/* ---------- 7. CARDS (products and inspiration) ---------- */
+
+/* FLEXBOX: display: flex puts the cards side by side in a row.
+   flex-wrap: wrap lets them drop to the next row when there's no room.
+   gap adds space between them. */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Each card is 31% of the width, so three fit on one row on a big screen */
+.card {
+  width: 31%;
+  background: white;
+  border: 1px solid #e7ddd0;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Makes the card lift slightly when the mouse is over it */
+.card {
+  transition: transform 0.2s;   /* makes the movement smooth instead of a sudden jump */
+}
+
+.card:hover {
+  transform: translateY(-5px);  /* moves the card up by 5 pixels */
+}
+
+/* SAME SIZE FOR EVERY PICTURE:
+   every picture gets the same width and height.
+   object-fit: cover fills that space without stretching the picture
+   (it trims the edges a little if needed). */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #7a4e2d;
+}
+
+
+/* ---------- 8. CART ---------- */
+
+/* If the table is too wide for a phone, this lets you scroll it sideways */
+.cart-wrap {
+  overflow-x: auto;
+}
+
+.cart-table {
+  width: 100%;
+  min-width: 550px;
+  border-collapse: collapse;   /* joins the cell borders into single lines */
+  background: white;
+}
+
+/* th = title cells, td = normal cells */
+.cart-table th,
+.cart-table td {
+  border: 1px solid #dddddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.cart-table th {
+  background: #7a4e2d;
+  color: white;
+}
+
+/* Small square pictures in the cart */
+.cart-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.cart-table input {
+  width: 60px;
+  padding: 5px;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.cart-buttons a {
+  margin: 0 10px 10px 0;   /* top, right, bottom, left */
+}
+
+
+/* ---------- 9. ABOUT ---------- */
+
+/* Flexbox again: picture on the left, text on the right */
+.about-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;     /* lines them up in the middle, top to bottom */
+  background: white;
+  border: 1px solid #e7ddd0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.about-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;          /* stops the picture being squashed by the text */
+}
+
+
+/* ---------- 10. FOOTER ---------- */
+
+.site-footer {
+  background: #2b2320;
+  color: white;
+  padding: 30px 20px;
+}
+
+.site-footer h2 {
+  color: white;
+}
+
+.site-footer a {
+  color: #e0a860;
+}
+
+/* Keeps the footer content in a neat centred column */
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+address {
+  font-style: normal;      /* <address> is italic by default, this turns that off */
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+/* ---------- 11. FORMS (contact form and checkout form) ---------- */
+
+/* display: block makes each label sit on its own line, above its box */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  margin-top: 15px;
+}
+
+
+/* ---------- 12. CHECKOUT PAGE ---------- */
+
+.checkout-form,
+.order-summary,
+.demo-note {
+  max-width: 600px;
+  margin: 0 auto 20px;     /* centred, with 20px below */
+}
+
+.checkout-form,
+.order-summary {
+  background: white;
+  border: 1px solid #e7ddd0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* fieldset draws a box around a group of fields, legend is its title */
+fieldset {
+  border: 1px solid #dddddd;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #7a4e2d;
+}
+
+/* A yellow notice box */
+.demo-note {
+  background: #fff6e5;
+  border-left: 4px solid #c8893b;
+  padding: 10px 15px;
+}
+
+.order-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #e7ddd0;
+}
+
+
+/* ---------- 13. THANK-YOU PAGE ---------- */
+
+.thanks-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #e7ddd0;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+}
+
+.tick {
+  font-size: 3rem;
+  color: #c8893b;
+  margin: 0;
+}
+
+
+/* ---------- 14. RESPONSIVE DESIGN ----------
+   A "media query" means: "only use these rules when the screen is this narrow or narrower".
+   Rules placed later in the file win over earlier ones, so these change the rules above. */
+
+/* TABLETS (768px wide or less): two cards per row, About stacks */
+@media (max-width: 768px) {
+  .card {
+    width: 48%;
+  }
+
+  .about-card {
+    flex-direction: column;   /* picture on top, text underneath */
+  }
+}
+
+/* PHONES (600px wide or less): one card per row */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .main-nav a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+}

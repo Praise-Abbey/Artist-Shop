@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- Every HTML page starts with the line above. It tells the browser "this is an HTML5 page". -->
+<html lang="en-GB">
+
+  <head>
+    <!-- The <head> holds information ABOUT the page. Nothing in here shows on the page itself. -->
+    <meta charset="UTF-8">
+
+    <!-- This line makes the page fit phone screens properly. Without it, responsive design won't work. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title is the text on the browser tab -->
+    <title>The KD Artisan Online Store</title>
+
+    <!-- This connects the page to style.css, the file that controls how the page LOOKS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- The <body> holds everything you SEE on the page. -->
+
+    <!-- ==================== HEADER ==================== -->
+    <!-- class="site-header" is a name we made up. In style.css we write .site-header { ... } to style it. -->
+    <header class="site-header">
+      <h1>The KD Artisan Online Store</h1>
+      <p>Welcome to KD's store</p>
+    </header>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="main-nav">
+      <ul>
+        <!-- href="#pottery" means "jump to the part of this page that has id="pottery"".
+             The smooth scrolling comes from one line of CSS (scroll-behavior: smooth). -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pottery">Pottery</a></li>
+        <li><a href="#painting">Paintings</a></li>
+        <li><a href="#jewelry">Jewelry</a></li>
+        <li><a href="#inspiration">Inspiration</a></li>
+        <!-- This number is typed by hand (1 pitcher + 2 necklaces = 3). Updating it by itself needs JavaScript. -->
+        <li><a href="#cart">Cart (3)</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- <main> holds the main content of the page -->
+    <main>
+
+      <!-- ==================== VIDEO ==================== -->
+      <!-- id="home" is the "address" that the Home link jumps to -->
+      <section id="home">
+        <h2>Creative Artwork Intro ▶</h2>
+
+        <!-- This div is a wrapper. The CSS for .video-container keeps the video the right shape on every screen. -->
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/j-N_W4mskHU?si=EW-qemYJubyyJUwo" title="Artwork" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- A backup link in case the video is blocked -->
+        <p class="video-note">Video not loading? <a href="https://www.youtube.com/watch?v=j-N_W4mskHU" target="_blank">Watch it on YouTube</a></p>
+      </section>
+
+      <!-- ==================== POTTERY ==================== -->
+      <section id="pottery">
+        <h2>Pottery</h2>
+
+        <!-- .cards is the box that holds all the product cards -->
+        <div class="cards">
+
+          <!-- ONE PRODUCT CARD. To add another product, copy from <article> to </article> and change the details. -->
+          <article class="card">
+            <!-- alt = a short description of the picture (for screen readers, and shows if the picture fails to load) -->
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRb-tcrQzcFHHyB1XYYwzq1y8kSG8A6Qqw0reKBZV5EVF6wmla1I8tRO8hMXwYRWIPbGKXyJTV-NcS_FHb2TzBxZ_kS7C-6ZZTqIzlHZl38" alt="Arches Bottle ceramic vase">
+            <h3>Arches Bottle | Ceramic Vase</h3>
+            <p class="price">£210.00</p>
+            <!-- This is a link that looks like a button. It jumps down to the cart. -->
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQE3LJDB9enoyFgm1TZNPyerwbuudMirYGlu4KsZU-AyPBC9_dQp7Ke92qnIvnMSeQKlIerBxCJf6hMshFPiJhgxLY2DLJvstVE4_27iIS-RoRYEQhbKSNEow" alt="Pottery scarab beetle framed art">
+            <h3>Pottery Scarab Beetle Framed Art</h3>
+            <p class="price">£55.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr5mSObwNl5RfBQknKFZCgR3b-Zp_hls32G-PhA_ncnuY7y4kHOeoL4ProxibsMDo_EDSla4uxbq37wflpnj6Q4ODTAJqkHfaMKYUnsumnwARC9MG3Iq72QPiy" alt="Handcrafted Moroccan red clay pitcher">
+            <h3>Handcrafted Moroccan Red Clay Pitcher</h3>
+            <p class="price">£40.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAINTINGS ==================== -->
+      <section id="painting">
+        <h2>Paintings</h2>
+        <div class="cards">
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSxc9Ca-KQ3KGFlDhCsAfG42AydBlkKgjuI9MI4F7uA0g8HJZ_zbVo24yx3-j3f_267Vy6MbHSUyZHhdvAz5n2gTrQWMrcE512XuT8SF5s" alt="Enchanting Sea painting">
+            <h3>Enchanting Sea</h3>
+            <p class="price">£970.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQy25hkBR9szO5YbgmlvWOdhpjTfavpD6xLZIKir1GuhslgN7zPRdxDAR5h1nJnX_ZySTXpTgGM7e2MPY9Ak2PyITe5eZvcK1wElMGXNKeMFKbnvSCiGRg8" alt="Framed art print">
+            <h3>Frame Art Paper GSM</h3>
+            <p class="price">£165.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQlu-ECx9tKUrnDvuDVxElHB1J9VoPMwXKE1mpDXsgGneTgxFMbvonpGBNIGS7Eahi-kGyms4-jBXApaAo1yPqfS3f3NEuugGp3s3Ejpxk" alt="Cherry blossom flower three-piece wall art">
+            <h3>Cherry Blossom Flower - 3-piece Wall Art</h3>
+            <p class="price">£390.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==================== JEWELRY ==================== -->
+      <section id="jewelry">
+        <h2>Jewelry</h2>
+        <div class="cards">
+
+          <article class="card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSPgnNkY3TzjhkN3TvX4wl8DRna33RHPVETtS-RYTqtXmhrP06EO4sT_lOsfH6XPxl3-l_niMhJuzU1SyBi__MOEQXPgvuhIOqnpmz23vPi8aEvOs98kyFp" alt="Van Gogh Starry Night necklace">
+            <h3>GAUEIOUR Van Gogh Starry Night Necklace</h3>
+            <p class="price">£6.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSwKx6nv6y-qY7ubl_bz-niGeFs-Qf1H2MFxM1ZXKiT2zqewQCzJtjfvABW5PhTJXjK2ejtekIfEQl3BYMPgjwHkMOEgP-17Kof4Fgh4ppxbzhzU-XI3pPakA" alt="Artist paint palette and brush necklace">
+            <h3>DAYLINLOVE Artist Paint Palette and Brush Necklace</h3>
+            <p class="price">£40.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVUsDyMTVfHXkwJKzrXORjzWDx773IJCuERlFRIOr0DeLrvItleJ66-8ZTHhW_Y6HJL2AsqtY2HM5OKm4kHGEQ6pgryPBXGJknNXUN1JFqPNyiG29ErVkd" alt="Gel print art necklace">
+            <h3>Adults Clever Hands Original Gel Print Art Necklace</h3>
+            <p class="price">£14.00</p>
+            <a href="#cart" class="btn">Add to cart</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==================== INSPIRATION ==================== -->
+      <section id="inspiration">
+        <h2>Inspiration</h2>
+        <p class="section-intro">
+          Everything in this store starts with a love of art in motion and a feeling for beauty
+          in small, ordinary things.
+        </p>
+
+        <!-- These reuse the same .cards and .card styles as the products, so there is less CSS to learn -->
+        <div class="cards">
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1dkfQnnn3zfQPMmH6AptoQDzAU02hhEOOm9KyWU2TAw&s=10" alt="Hand-drawn animation frames">
+            <h3>Art in Motion</h3>
+            <p>
+              Animation taught me that a still image can feel alive. Hand-drawn frames, gentle
+              movement and the way a character breathes between moments all shape how I think
+              about colour, flow and rhythm in my pieces.
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSioT-7ZVRyjfkyTEvvjNcpNDtH-5xLYGzASqvDHJKA&s=10" alt="Soft sunset colour palette">
+            <h3>Colour and Light</h3>
+            <p>
+              I'm drawn to soft glows, dreamy skies and painted backdrops where every colour
+              feels chosen on purpose. Those palettes show up in my paintings, glazes and
+              jewelry finishes.
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSikN9XI8Mem-CATFOHwYC5f4gt3e0K7W1ya5yGKOHGUw&s=10" alt="Handmade objects">
+            <h3>Everyday Beauty</h3>
+            <p>
+              A well-made mug, a patterned vase, a small pendant: beautiful objects make
+              ordinary days feel a bit more special, and that is what I want my work to do.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==================== CART ==================== -->
+      <section id="cart">
+        <h2>Your Cart</h2>
+
+        <!-- NOTE: this cart is "static": the items are typed by hand.
+             Making items add, remove and update the total by themselves needs JavaScript. -->
+
+        <!-- This wrapper lets the table scroll sideways on small phones instead of breaking the page -->
+        <div class="cart-wrap">
+
+          <!-- A <table> is made of rows (<tr>). Each row has cells: <th> for titles, <td> for normal cells. -->
+          <table class="cart-table">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Remove</th>
+            </tr>
+
+            <!-- ONE CART ROW. Copy from <tr> to </tr> to add another item. -->
+            <tr>
+              <td>
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr5mSObwNl5RfBQknKFZCgR3b-Zp_hls32G-PhA_ncnuY7y4kHOeoL4ProxibsMDo_EDSla4uxbq37wflpnj6Q4ODTAJqkHfaMKYUnsumnwARC9MG3Iq72QPiy" alt="Moroccan red clay pitcher">
+                Handcrafted Moroccan Red Clay Pitcher
+              </td>
+              <td>£40.00</td>
+              <!-- type="number" gives a box for numbers. min="1" stops zero or negative numbers. value="1" is the starting number. -->
+              <td><input type="number" min="1" value="1"></td>
+              <td>£40.00</td>
+              <!-- This button looks right but does nothing yet (it would need JavaScript) -->
+              <td><button type="button">Remove</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSPgnNkY3TzjhkN3TvX4wl8DRna33RHPVETtS-RYTqtXmhrP06EO4sT_lOsfH6XPxl3-l_niMhJuzU1SyBi__MOEQXPgvuhIOqnpmz23vPi8aEvOs98kyFp" alt="Starry Night necklace">
+                GAUEIOUR Van Gogh Starry Night Necklace
+              </td>
+              <td>£6.00</td>
+              <td><input type="number" min="1" value="2"></td>
+              <td>£12.00</td>
+              <td><button type="button">Remove</button></td>
+            </tr>
+          </table>
+
+        </div>
+
+        <!-- The total is typed by hand: £40.00 + £12.00 = £52.00 -->
+        <p class="cart-total">Total: £52.00</p>
+
+        <div class="cart-buttons">
+          <a href="#pottery" class="btn">Continue shopping</a>
+          <a href="checkout.html" class="btn">Proceed to checkout</a>
+        </div>
+      </section>
+
+      <!-- ==================== ABOUT ==================== -->
+      <section id="about">
+        <h2>About</h2>
+
+        <article class="about-card">
+          <img src="https://d39ai5mk5cpjgw.cloudfront.net/generation/6ad0f35eb8f5731b483c5c97/fecf854e.webp" alt="KD working in the studio">
+          <div>
+            <h3>Hello, I'm KD</h3>
+            <p>I am an art creator, a lover of art, an artisan and so many more, my love for art is undefinable. <br> I used to think art was just a picture, nothing more, nothing less, but it's different, Art is different. There are so many things, values you can find in an art if you just calm your mind and listen to it. <br> I am based in the UK, although it's nothing much, I love creating artpieces, and it's been my source of joy nowadays.</p>
+            <hr>
+            <p>My work is not as popular as others, but I make pieces on creativity, it's the same as others but different at the same time.</p>
+          </div>
+        </article>
+      </section>
+
+    </main>
+
+    <!-- ==================== FOOTER / CONTACT ==================== -->
+    <!-- id="contact" is where the Contact link jumps to -->
+    <footer id="contact" class="site-footer">
+      <div class="footer-content">
+        <h2>Contact</h2>
+
+        <!-- <address> is the correct tag for contact details -->
+        <address>
+          <!-- mailto: opens the visitor's email app. tel: lets phone users tap to call. -->
+          <p>Email: <a href="mailto:abbeypraise03@gmail.com">abbeypraise03@gmail.com</a></p>
+          <p>Phone: <a href="tel:+447466519593">+44 7466 519593</a></p>
+          <p>Location: Romford, UK</p>
+          <!-- target="_blank" opens the link in a new tab. Replace # with your real social media links. -->
+          <p>
+            Follow: <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a>
+          </p>
+        </address>
+
+        <!-- A simple contact form. "required" means it can't be left empty. type="email" checks it looks like an email.
+             It can't actually send messages without a server, so action="#" just reloads the page. -->
+        <form action="#">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <!-- &copy; shows the copyright symbol -->
+        <p class="copyright">&copy; 2026 The KD Artisan Online Store</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
